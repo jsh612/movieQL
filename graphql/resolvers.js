@@ -1,14 +1,10 @@
-// 이게 곧 Database
-const jsh = {
-  name: "jsh",
-  age: 20,
-  gender: "male"
-};
+import { people, getByid } from "./db";
 
 const reslovers = {
   // data를 보내는 역할
   Query: {
-    person: () => jsh
+    people: () => people,
+    person: id => getByid(id)
   }
 };
 

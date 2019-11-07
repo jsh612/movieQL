@@ -1,9 +1,11 @@
-type jsh {
+type Person {
+  id: Int!
   name: String
   age: Int!
   gender: String!
 }
 
 type Query {
-  person: jsh
+  people: [Person]!
+  person(id: Int!): Person #Person에서 특정 id에 해당하는 것만 출력
 }
