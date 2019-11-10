@@ -1,4 +1,4 @@
-import { getByid, getMovies } from "./db";
+import { getByid, getMovies, addMovie, deleteMovie } from "./db";
 
 const reslovers = {
   // data를 보내는 역할
@@ -10,8 +10,10 @@ const reslovers = {
     // movie: (_, arg) => getByid(arg.id)
     movie: (_, { id }) => getByid(id)
   },
+
   Mutation: {
-    addMovie: (_, { name, score }) => addMovie(name, score)
+    addMovie: (_, { name, score }) => addMovie(name, score),
+    deleteMovie: (_, { id }) => deleteMovie(id)
   }
 };
 
