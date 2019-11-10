@@ -1,9 +1,9 @@
-import { getByid, getMovies, addMovie, deleteMovie } from "./db";
+import { getMovies } from "./db";
 
 const reslovers = {
   // data를 보내는 역할
   Query: {
-    movies: () => getMovies()
+    movies: (_, { rating, limit }) => getMovies(rating, limit)
     // movie: (_, arg) => {
     //   console.log(arg); // { id: 1} 객체 혀앹로 출력
     // }

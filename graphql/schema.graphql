@@ -10,7 +10,7 @@ type Movie {
 type Query {
   #-작성 형식
   #  함수이름 : 출력값
-  movies: [Movie]!
+  movies(rating: Float, limit: Int): [Movie]!
   # movie(id: Int!): Movie # Movie에서 특정 id에 해당하는 것만 출력
 }
 
