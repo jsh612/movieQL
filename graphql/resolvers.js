@@ -3,17 +3,12 @@ import { getByid, getMovies, addMovie, deleteMovie } from "./db";
 const reslovers = {
   // data를 보내는 역할
   Query: {
-    movies: () => getMovies(),
+    movies: () => getMovies()
     // movie: (_, arg) => {
     //   console.log(arg); // { id: 1} 객체 혀앹로 출력
     // }
     // movie: (_, arg) => getByid(arg.id)
-    movie: (_, { id }) => getByid(id)
-  },
-
-  Mutation: {
-    addMovie: (_, { name, score }) => addMovie(name, score),
-    deleteMovie: (_, { id }) => deleteMovie(id)
+    // movie: (_, { id }) => getByid(id)
   }
 };
 
