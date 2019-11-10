@@ -1,17 +1,20 @@
 type Movie {
   id: Int!
   title: String!
-  rating: Float!
-  summary: String!
-  language: String!
-  medium_cover_image: String!
+  rating: Float
+  description_intro: String
+  language: String
+  medium_cover_image: String
+  genres: [String]
 }
 
 type Query {
   #-작성 형식
   #  함수이름 : 출력값
   movies(rating: Float, limit: Int): [Movie]!
-  # movie(id: Int!): Movie # Movie에서 특정 id에 해당하는 것만 출력
+  # movie(id: Int!): Movie //// Movie에서 특정 id에 해당하는 것만 출력
+  movie(id: Int!): Movie
+  suggestions(id: Int!): [Movie]!
 }
 
 # type Mutation {
